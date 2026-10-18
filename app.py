@@ -114,16 +114,16 @@ st.markdown("""
 @st.cache_data
 def cargar_datos_globales(nombre_modelo):
     if nombre_modelo == "Random Forest":
-        return pd.read_csv("eval_rf.csv")
+        return pd.read_csv("eval_rf.zip")
     elif nombre_modelo == "XGBoost":
-        return pd.read_csv("eval_xgb.csv")
+        return pd.read_csv("eval_xgb.zip")
     else:
-        return pd.read_csv("eval_lstm.csv")
+        return pd.read_csv("eval_lstm.zip")
 
 @st.cache_data
 def cargar_datos_maquinas():
     try:
-        return pd.read_csv("resultados_modelos_por_maquina.csv")
+        return pd.read_csv("resultados_modelos_por_maquina.zip")
     except FileNotFoundError:
         # Si no existe el CSV precalculado, intenta cargar algún Dataset de evaluación por máquinas
         try:
